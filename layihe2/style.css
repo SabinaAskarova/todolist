@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.main {
+    width: 334px;
+    height: auto;
+    margin: 232px auto;
+    border: 1px solid red;
+}
+
+.sari {
+    width: 334px;
+    height: 28px;
+    background-color: rgba(255, 220, 64, 1);
+    border-radius: 10px 10px 0 0;
+}
+
+h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.images {
+    margin-left: 279px;
+    margin-top: 16px;
+}
+
+.input {
+    display: flex;
+    margin-top: 11px;
+    width: 284.3px;
+    height: 40px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-left: 27.83px;
+}
+
+input {
+    border: 0;
+    width: 224.3px;
+    height: 35px;
+    margin-left: 10px;
+}
+
+
+/* .inpicon {
+    width: 19.94px;
+    height: 22.95px;
+    border: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 7px;
+    background: url(images/nodelete.png) no-repeat;
+} */
+
+.duyme {
+    margin: 20.65px 0 23px 91.72px
+}
