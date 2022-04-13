@@ -47,16 +47,13 @@ input {
     margin-left: 10px;
 }
 
+ul li {
+    list-style: none;
+}
 
-/* .inpicon {
-    width: 19.94px;
-    height: 22.95px;
-    border: 0;
-    margin-top: 10px;
+.list {
     margin-left: 10px;
-    margin-bottom: 7px;
-    background: url(images/nodelete.png) no-repeat;
-} */
+}
 
 .duyme {
     margin: 20.65px 0 23px 91.72px
