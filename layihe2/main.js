@@ -8,18 +8,14 @@ input.addEventListener('focus', function(event) {
     event.target.style.outline = '0';
 })
 
-let btn = document.querySelector('.inpicon')
-btn.addEventListener('mouseon', (event) => {
-    event.target.style.backgroundColor = 'red';
-})
-
 
 let list = document.querySelector('.list');
-
+let inp2 = document.querySelector('.input')
 let btn = document.querySelector('.inpicon')
-
-btn.addEventListener('click', (event) => {
-       let input1 = document.createElement('input');
+let noyes = document.querySelector('.noyes');
+let noyes2 = noyes
+input.addEventListener('blur', (event) => {
+    let input1 = document.createElement('input');
     let button = document.createElement('button');
     let pic = document.createElement('img');
     pic.src = "images/nodelete.png";
@@ -27,5 +23,11 @@ btn.addEventListener('click', (event) => {
     input1.value = input.value
     list.append(input1);
     list.append(button)
+    inp2.style.display = 'none';
+})
+
+btn.addEventListener('click', () => {
     input.value = ''
+    inp2.style.display = 'block';
+
 })
