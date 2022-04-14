@@ -3,7 +3,6 @@
     width: 334px;
     height: auto;
     margin: 232px auto;
-    border: 1px solid red;
 }
 
 .sari {
@@ -52,9 +51,17 @@ ul li {
 }
 
 .list {
-    margin-left: 10px;
+    margin-left: 25px;
+    margin-top: 11px;
 }
 
 .duyme {
-    margin: 20.65px 0 23px 91.72px
+    margin: 20.65px 0 23px 91.72px;
+    border: 0;
+    background-color: white;
+}
+
+.noyes {
+    background-color: white;
+    border: 0;
 }
