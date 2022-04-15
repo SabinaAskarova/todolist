@@ -3,6 +3,9 @@
     width: 334px;
     height: auto;
     margin: 232px auto;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
 .sari {
@@ -23,11 +26,6 @@ h1 {
     color: #000000;
 }
 
-.images {
-    margin-left: 279px;
-    margin-top: 16px;
-}
-
 .input {
     display: flex;
     margin-top: 11px;
@@ -44,6 +42,7 @@ input {
     width: 224.3px;
     height: 35px;
     margin-left: 10px;
+    outline: none;
 }
 
 ul li {
@@ -51,8 +50,13 @@ ul li {
 }
 
 .list {
-    margin-left: 25px;
+    width: 280px;
+    border-radius: 10px;
     margin-top: 11px;
+    margin-left: 28px;
+    padding-bottom: 11px;
+    /* padding: 0 0 0 24px; */
+    border: 1px solid #C4C4C4;
 }
 
 .duyme {
@@ -64,4 +68,58 @@ ul li {
 .noyes {
     background-color: white;
     border: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url(images/nodelete.png);
+    margin-top: 8px;
+}
+
+.noyes:hover {
+    background-image: url(images/yesdelete.png);
+}
+
+.sortbtn {
+    background-color: white;
+    border: 0;
+    width: 25px;
+    height: 15px;
+    /* background-image: url('images/noazalan.png'); */
+    margin-left: 281px;
+}
+
+.pilus {
+    padding-top: 13px;
+    width: 42px;
+    height: 29px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: #AA68FE;
+    border-radius: 71px;
+}
+
+.duyme {
+    width: 150px;
+    height: 42px;
+    background: #9953F1;
+    border-radius: 71px;
+}
+
+p {
+    margin-left: 70px;
+    margin-top: -29px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
 }

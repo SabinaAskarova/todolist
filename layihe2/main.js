@@ -1,80 +1,134 @@
-let input = document.querySelector('input');
+let addbtn = document.querySelector('.duyme');
+let text = document.querySelector('input');
+let list = document.querySelector('.list')
+list.style.display = 'none'
+let deletebtn = document.querySelector('.noyes');
+let azalart = document.querySelector('.azalart')
 
-input.addEventListener('click', function(event) {
-    event.target.style.outline = '0'
+function addlistitem() {
+    list.innerHTML += `<div class="newinput"> 
+    <input class="text" type="text" name="" id="" value="${text.value}">
+    <button class="noyes"></button>
+</div>`;
+    text.value = '';
 
-})
-input.addEventListener('focus', function(event) {
-    event.target.style.outline = '0';
-})
+    let deletebtnnew = document.querySelectorAll('.noyes');
+    deletebtnnew.forEach(el => {
+        el.addEventListener('click', deletefunc)
 
-
-let list = document.querySelector('.list');
-let inp2 = document.querySelector('.input')
-let btn = document.querySelector('.inpicon')
-let noyes = document.querySelector('.noyes');
-let noyespic = document.querySelector('.noyespic');
-let noyes2 = noyes;
-
-//6 4 9 6 14 ?-2+3-3+8-4
-
-input.addEventListener('blur', () => {
-    var deletebutton = document.createElement('button');
-    var pic = document.createElement('img');;
-    pic.src = "images/nodelete.png";
-    var dv = document.createElement('div');
-    var input1 = document.createElement('input');
-    deletebutton.append(pic)
-    deletebutton.style.backgroundColor = "white";
-    deletebutton.style.border = '0';
-    deletebutton.style.marginLeft = '8px'
-    input1.value = input.value;
-    dv.append(input1);
-    dv.append(deletebutton)
-    list.append(dv);
-    inp2.style.display = 'none';
-    deletebutton.classList.add('dltbtn');
-    input1.classList.add('listitem')
-    deletebutton.addEventListener('mouseover', () => {
-        pic.src = "images/yesdelete.png";
+        function deletefunc(event) {
+            event.target.parentElement.remove()
+        }
     })
-    deletebutton.addEventListener('mouseout', () => {
-        pic.src = "images/nodelete.png";
+    list.style.display = 'block'
+}
+
+addbtn.addEventListener('click', addlistitem)
+
+let allist1 = document.querySelectorAll('.text');
+
+//////////////SORT
+let arr = [];
+let counter = 0;
+
+let sortbtn = document.querySelector('.sortbtn');
+sortbtn.addEventListener('click', sorter);
+sortbtn.addEventListener('click', demo);
+
+function demo() {
+    let deletebtnnew = document.querySelectorAll('.noyes');
+    deletebtnnew.forEach(el => {
+        el.addEventListener('click', deletefunc)
+
+        function deletefunc(event) {
+            event.target.parentElement.remove()
+        }
     })
-    deletebutton.addEventListener('click', () => {
-        dv.remove()
-    })
+}
 
+function sorter() {
+
+    let allist = document.querySelectorAll('.text');
+    allist.forEach(el => arr.push(el.value))
+    console.log(arr);
+    list.innerHTML = '';
+    arr.pop();
+
+    if (counter == 0) {
+        domcreator(counter);
+        counter++;
+        azalart.src = "images/noartan.png"
+    } else {
+        domcreator(counter);
+        counter--;
+        azalart.src = "images/noazalan.png"
+    }
+    arr = [];
+}
+
+function domcreator(el) {
+    if (el == 0) {
+        let element = ''
+
+        arr.sort(function(a, b) {
+            if (a > b) {
+                return 1;
+            } else if (a < b) {
+                return -1;
+            } else {
+                return 0;
+            }
+        });
+
+        arr.map(c => {
+            element += `<div class="newinput"> 
+            <input class="text" type="text" name="" id="" value="${c}">
+            <button class="noyes"></button>
+        </div>`;
+        });
+        list.innerHTML = element
+        console.log(arr);
+
+    } else {
+        let element = ''
+
+        arr.sort(function(a, b) {
+            if (a > b) {
+                return -1;
+            } else if (a < b) {
+                return 1;
+            } else {
+                return 0;
+            }
+        });
+        arr.map(c => {
+            element += `<div class="newinput"> 
+            <input class="text" type="text" name="" id="" value="${c}">
+            <button class="noyes"></button>
+        </div>`;
+        });
+        list.innerHTML = element
+        console.log(arr);
+    }
+}
+////Mouseover-mouseout
+
+sortbtn.addEventListener('mouseover', _ => {
+    var img = document.getElementById('sekil').getAttribute('src');
+    if (img == "images/noartan.png") {
+        azalart.src = 'images/yesartan.png'
+    } else if (img == "images/noazalan.png") {
+        azalart.src = 'images/yesazalan.png'
+    }
 })
-let count = 0;
-let azalanartan = document.querySelector('.azalanartan');
+sortbtn.addEventListener('mouseout', _ => {
+    var img = document.getElementById('sekil').getAttribute('src');
 
+    if (img == "images/yesartan.png") {
+        azalart.src = 'images/noartan.png'
 
-azalanartan.addEventListener('mouseover', (event) => {
-    event.target.src = "images/yesazalan.png";
-})
-azalanartan.addEventListener('click', (event) => {
-    event.target.src = "images/noartan.png";
-})
-azalanartan.addEventListener('mouseover', (event) => {
-    event.target.src = "images/yesartan.png";
-})
-azalanartan.addEventListener('click', (event) => {
-        event.target.src = "images/noazalan.png";
-    })
-    // noyes.addEventListener('mouseover', () => {
-    //     noyespic.src = "images/yesdelete.png";
-    // })
+    } else if (img == "images/yesazalan.png") {
+        azalart.src = 'images/noazalan.png'
 
-// noyes.addEventListener('mouseout', () => {
-//     noyespic.src = "images/nodelete.png";
-// })
-
-// noyes.addEventListener('click', () => {
-//     input.value = ''
-// })
-
-btn.addEventListener('click', () => {
-    input.value = ''
-    inp2.style.display = 'block';
+    }
 })
