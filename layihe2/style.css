@@ -3,6 +3,9 @@
     width: 334px;
     height: auto;
     margin: 232px auto;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
 .sari {
@@ -57,7 +60,7 @@ ul li {
     margin-left: 15px;
     padding-bottom: 11px;
     /* padding: 0 0 0 24px; */
-    border: 1px solid #C4C4C4;
+    border: 0px solid #C4C4C4;
     overflow: auto;
 }
 

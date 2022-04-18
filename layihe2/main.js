@@ -10,7 +10,6 @@ input.addEventListener('focus', function(event) {
 
 
 let list = document.querySelector('.list');
-let inp2 = document.querySelector('.input')
 let btn = document.querySelector('.duyme')
 let noyes = document.querySelector('.noyes');
 let firstinput = document.querySelector('input');
@@ -23,7 +22,7 @@ function addlistitem() {
     <input type="text" name="" id="">
     <button class="noyes"></button>
 </div>`;
-
+    list.style.outline = '0'
     let deletebtnnew = document.querySelectorAll('.noyes');
     deletebtnnew.forEach(el => {
         el.addEventListener('click', deletefunc)
@@ -48,6 +47,12 @@ function addlistitem() {
             el.setAttribute("value", el.value);
         })
     })
+
+    let inpdiv = document.querySelectorAll('.input');
+    inpdiv.forEach(el => {
+        el.style.border = 'none'
+    })
+    list.style.border = '1px solid #C4C4C4';
 }
 
 btn.addEventListener('click', addlistitem);
@@ -89,6 +94,12 @@ function firstsort() {
             el.setAttribute("value", el.value);
         })
     })
+
+    let inpdiv = document.querySelectorAll('.input');
+    inpdiv.forEach(el => {
+        el.style.border = 'none'
+    })
+    list.style.border = '1px solid #C4C4C4';
 }
 
 
