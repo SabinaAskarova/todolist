@@ -13,7 +13,7 @@ let list = document.querySelector('.list');
 let inp2 = document.querySelector('.input')
 let btn = document.querySelector('.duyme')
 let noyes = document.querySelector('.noyes');
-let firstinput = document.querySelector('.firstinput');
+let firstinput = document.querySelector('input');
 firstinput.addEventListener('blur', _ => {
     firstinput.setAttribute("value", firstinput.value);
 })
@@ -35,7 +35,15 @@ function addlistitem() {
 
     let inputs = document.querySelectorAll('input');
     inputs.forEach(el => {
-        el.style.outline = '0'
+
+        el.addEventListener('click', function(event) {
+            event.target.style.outline = '0'
+
+        })
+        el.addEventListener('focus', function(event) {
+            event.target.style.outline = '0';
+        })
+
         el.addEventListener('blur', _ => {
             el.setAttribute("value", el.value);
         })
@@ -52,6 +60,7 @@ let counter = 0;
 let sortbtn = document.querySelector('.sortbtn');
 sortbtn.addEventListener('click', sorter);
 sortbtn.addEventListener('click', demo);
+sortbtn.addEventListener('click', firstsort);
 
 function demo() {
     let deletebtnnew = document.querySelectorAll('.noyes');
@@ -64,9 +73,29 @@ function demo() {
     })
 }
 
+function firstsort() {
+    let inputs = document.querySelectorAll('input');
+    inputs.forEach(el => {
+
+        el.addEventListener('click', function(event) {
+            event.target.style.outline = '0'
+
+        })
+        el.addEventListener('focus', function(event) {
+            event.target.style.outline = '0';
+        })
+
+        el.addEventListener('blur', _ => {
+            el.setAttribute("value", el.value);
+        })
+    })
+}
+
+
 function sorter() {
 
     let allist = document.querySelectorAll('input');
+
     allist.forEach(el => arr.push(el.value))
     console.log(arr);
     list.innerHTML = '';
@@ -102,7 +131,6 @@ function domcreator(el) {
             <input type="text" name="" id="" value="${c}">
             <button class="noyes"></button>
         </div>`;
-
         });
         list.innerHTML = element
         console.log(arr);
