@@ -1,16 +1,28 @@
-let addbtn = document.querySelector('.duyme');
-let text = document.querySelector('input');
-let list = document.querySelector('.list')
-list.style.display = 'none'
-let deletebtn = document.querySelector('.noyes');
-let azalart = document.querySelector('.azalart')
+let input = document.querySelector('input');
+
+input.addEventListener('click', function(event) {
+    event.target.style.outline = '0'
+
+})
+input.addEventListener('focus', function(event) {
+    event.target.style.outline = '0';
+})
+
+
+let list = document.querySelector('.list');
+let inp2 = document.querySelector('.input')
+let btn = document.querySelector('.duyme')
+let noyes = document.querySelector('.noyes');
+let firstinput = document.querySelector('.firstinput');
+firstinput.addEventListener('blur', _ => {
+    firstinput.setAttribute("value", firstinput.value);
+})
 
 function addlistitem() {
-    list.innerHTML += `<div class="newinput"> 
-    <input class="text" type="text" name="" id="" value="${text.value}">
+    list.innerHTML += `<div class="input">
+    <input type="text" name="" id="">
     <button class="noyes"></button>
 </div>`;
-    text.value = '';
 
     let deletebtnnew = document.querySelectorAll('.noyes');
     deletebtnnew.forEach(el => {
@@ -20,14 +32,20 @@ function addlistitem() {
             event.target.parentElement.remove()
         }
     })
-    list.style.display = 'block'
+
+    let inputs = document.querySelectorAll('input');
+    inputs.forEach(el => {
+        el.style.outline = '0'
+        el.addEventListener('blur', _ => {
+            el.setAttribute("value", el.value);
+        })
+    })
 }
 
-addbtn.addEventListener('click', addlistitem)
+btn.addEventListener('click', addlistitem);
 
-let allist1 = document.querySelectorAll('.text');
 
-//////////////SORT
+// SORT
 let arr = [];
 let counter = 0;
 
@@ -48,11 +66,10 @@ function demo() {
 
 function sorter() {
 
-    let allist = document.querySelectorAll('.text');
+    let allist = document.querySelectorAll('input');
     allist.forEach(el => arr.push(el.value))
     console.log(arr);
     list.innerHTML = '';
-    arr.pop();
 
     if (counter == 0) {
         domcreator(counter);
@@ -81,10 +98,11 @@ function domcreator(el) {
         });
 
         arr.map(c => {
-            element += `<div class="newinput"> 
-            <input class="text" type="text" name="" id="" value="${c}">
+            element += `<div class="input">
+            <input type="text" name="" id="" value="${c}">
             <button class="noyes"></button>
         </div>`;
+
         });
         list.innerHTML = element
         console.log(arr);
@@ -102,17 +120,18 @@ function domcreator(el) {
             }
         });
         arr.map(c => {
-            element += `<div class="newinput"> 
-            <input class="text" type="text" name="" id="" value="${c}">
+            element += `<div class="input">
+            <input type="text" name="" id="" value="${c}">
             <button class="noyes"></button>
         </div>`;
+
         });
         list.innerHTML = element
         console.log(arr);
     }
 }
-////Mouseover-mouseout
-
+//Mouseover-mouseout
+let azalart = document.querySelector('.azalart')
 sortbtn.addEventListener('mouseover', _ => {
     var img = document.getElementById('sekil').getAttribute('src');
     if (img == "images/noartan.png") {

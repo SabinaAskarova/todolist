@@ -3,9 +3,6 @@
     width: 334px;
     height: auto;
     margin: 232px auto;
-    border: 1px solid #C4C4C4;
-    box-sizing: border-box;
-    border-radius: 10px;
 }
 
 .sari {
@@ -26,15 +23,20 @@ h1 {
     color: #000000;
 }
 
+.images {
+    margin-left: 279px;
+    margin-top: 16px;
+}
+
 .input {
     display: flex;
     margin-top: 11px;
-    width: 284.3px;
+    width: 281.3px;
     height: 40px;
     border: 1px solid #C4C4C4;
     box-sizing: border-box;
     border-radius: 10px;
-    margin-left: 27.83px;
+    margin-left: 6.83px;
 }
 
 input {
@@ -42,7 +44,6 @@ input {
     width: 224.3px;
     height: 35px;
     margin-left: 10px;
-    outline: none;
 }
 
 ul li {
@@ -50,10 +51,10 @@ ul li {
 }
 
 .list {
-    width: 280px;
+    width: 299px;
     border-radius: 10px;
     margin-top: 11px;
-    margin-left: 28px;
+    margin-left: 15px;
     padding-bottom: 11px;
     /* padding: 0 0 0 24px; */
     border: 1px solid #C4C4C4;
@@ -76,15 +77,6 @@ ul li {
 
 .noyes:hover {
     background-image: url(images/yesdelete.png);
-}
-
-.sortbtn {
-    background-color: white;
-    border: 0;
-    width: 25px;
-    height: 15px;
-    /* background-image: url('images/noazalan.png'); */
-    margin-left: 281px;
 }
 
 .pilus {
@@ -122,4 +114,12 @@ p {
     align-items: center;
     text-align: center;
     color: #FFFFFF;
+}
+
+.sortbtn {
+    background-color: white;
+    border: 0;
+    width: 25px;
+    height: 15px;
+    margin-left: 281px;
 }
